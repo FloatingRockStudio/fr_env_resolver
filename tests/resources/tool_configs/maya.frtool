@@ -1,0 +1,13 @@
+{
+    "maya": {
+        "environ": {
+            "workflow": "maya"
+        },
+        "category": "3D",
+        "command": "maya.exe",
+        "icon": "./maya_icon.png",
+        "title": "MAYA",
+        "description": "Launch Maya",
+        "filters": [["os", "is", "windows"]]
+    }
+}

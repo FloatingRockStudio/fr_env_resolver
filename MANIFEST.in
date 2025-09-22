@@ -1,0 +1,9 @@
+include README.md
+include LICENSE
+include LICENSES.txt
+include CONTRIBUTING.md
+recursive-include schema *.fr_schema
+recursive-include docs *
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude .git*

@@ -1,0 +1,76 @@
+{
+    __version__: 1,
+    __types__: {
+        package: {
+            type: "string",
+            compare: {type: "string", default: "^(?:[!~]*)([_a-zA-Z0-9]+)-?.*?"},
+        },
+        environ: {
+            type: "string",
+            separator: {type: "string", default: "%pathsep%"}, // %pathsep% is ; on windows and : on linux/mac
+        }
+    },
+    production_info: {
+        type: "object",
+        items: {
+            type: "object",
+            api_name: {
+                type: "string",
+                default: ""
+            },
+            url: {
+                type: "string",
+                default: ""
+            },
+            project_code: {
+                type: "string",
+                default: ""
+            }
+        }
+    },
+    packages: {
+        type: "array",
+        cascade: "append",
+        unique: true,
+        items: {
+            type: "package",
+        }
+    },
+    variables: {
+        type: "object",
+        cascade: "update",
+        items: {
+            type: "environ",
+        }
+    },
+    manifest: {
+        type: "string",
+        default:""
+    },
+    workflows: {
+        type: "object",
+        cascade: "update",
+        items: {
+            type: "object",
+            packages: {
+                type: "array",
+                cascade: "append",
+                items: {
+                    type: "package",
+                }
+            },
+            variables: {
+                type: "object",
+                cascade: "update",
+                items: {
+                    type: "environ",
+                }
+            },
+            override: { type: "bool", default: false },
+            manifest: {
+                type: "string",
+                default:""
+            },
+        }
+    }
+}

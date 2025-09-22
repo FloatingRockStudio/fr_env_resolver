@@ -1,0 +1,12 @@
+{
+    "houdini": {
+        "environ": {
+            "workflow": "houdini"
+        },
+        "category": "3D",
+        "command": "houdini.exe",
+        "icon": "./houdini_icon.png",
+        "title": "Houdini",
+        "description": "Launch Houdini"
+    }
+}

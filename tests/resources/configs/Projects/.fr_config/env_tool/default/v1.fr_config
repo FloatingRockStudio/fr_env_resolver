@@ -1,0 +1,23 @@
+{
+    "tools": {
+        "maya": {},
+        "slating_tool": {
+            "environ": {
+                "override": true,
+                "packages": ["fr_slating_tool", "python-3.9.7"]
+            },
+            "filters": [["context.project", "is", "FR_ENV"], ["user.groups", "contains", "techartist"]]
+        },
+        "slate_uploader": {
+            "environ": {
+                "override": true,
+                "packages": ["fr_slating_tool", "python-3.9.7"]
+            },
+            "filters": [{"$and": [
+                                 [["context.sequence", "in", ["SEQ_001", "SEQ_002"]]],
+                                 [["context.project", "is", "FR_ENV"]]
+                                 ]
+                        }]
+        }
+    }
+}

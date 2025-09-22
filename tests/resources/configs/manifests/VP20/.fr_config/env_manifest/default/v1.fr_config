@@ -1,0 +1,26 @@
+{
+    variables: {
+        PATH: {
+            "cascade": "append",
+            "value": "/path/to/VP20/thing"
+        },
+    },
+    packages: ["PySide2-5.15.2", "python-3.9.7"],
+
+    workflows: {
+        maya: {
+            packages: [
+                "maya-2023.6",
+                "pymel-4",
+                "vp-20",
+            ],
+        },
+        houdini: {
+            packages: [
+                "houdini-19.5.560",
+                "python-3.9.12",
+                "vp-20",
+            ],
+        }
+    }
+}

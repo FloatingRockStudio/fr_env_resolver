@@ -1,0 +1,61 @@
+{
+    __version__: 1,
+    __types__: {
+        environ: {
+            type: "string",
+            separator: {type: "string", default: "%pathsep%"}, // %pathsep% is ; on windows and : on linux/mac
+        },
+        package: {
+            type: "string",
+            compare: {type: "string", default: "^(?:[!~]*)([_a-zA-Z0-9]+)(-|==)?.*?"},
+        },
+        tool: {
+            type: "object",
+            command: { type: "string" },
+            title: { type: "string" },
+            description: { type: "string" },
+            icon: { type: "string" },
+            filters: {
+                type: "array",
+                cascade: "append",
+                items: {
+                    // variable type for list of list of string or list of complext dict
+                    type: "object"
+                }
+            },
+            environ: {
+                type: "object",
+                override: { type: "bool", default: false },
+                workflow: { type: "string" },
+                packages: {
+                    type: "array",
+                    cascade: "append",
+                    items: {
+                        type: "package",
+                    }
+                },
+                variables: {
+                    type: "object",
+                    cascade: "update",
+                    items: {
+                        type: "environ",
+                    }
+                }
+            },
+            variants: {
+                type: "object",
+                cascade: "update",
+                items: {
+                    type: "tool"
+                }
+            }
+        }
+    },
+    tools: {
+        type: "object",
+        cascade: "update",
+        items: {
+            type: "tool"
+        }
+    },
+}

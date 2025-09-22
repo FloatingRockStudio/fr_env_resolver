@@ -1,0 +1,27 @@
+{
+    "packages": [
+        "PySide2-5.15.2",
+        "python-3.9.7"
+    ],
+    "variables": {
+        "SOME_VAR": {
+            "value": "2",
+            "cascade": "replace"
+        },
+        "PATH": {
+            "value": "/path/to/something",
+            "cascade": "append"
+        }
+    },
+    "$parent": "${FR_PROJECTS_DIR}/FR_ENV",
+    "__info__": {
+        "source": null,
+        "version": 1,
+        "name": "env_context",
+        "variant": "default",
+        "schema": "c:/users/alex.telford/rez_pkgs_dev/fr_env_resolver/0.1.5.5/schema/env_context.fr_schema",
+        "author": "alex.telford",
+        "created": "16/09/2025, 15:16:43",
+        "commit_message": "This is a test"
+    }
+}

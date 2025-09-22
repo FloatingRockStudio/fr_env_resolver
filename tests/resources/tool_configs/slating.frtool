@@ -1,0 +1,23 @@
+{
+    "slating_tool": {
+        "title": "SLATE",
+        "category": "Production",
+        "command": "slating_tool",
+        "description": "SURV Slating tool",
+        "icon": "X:/Pipeline/Prism2/LauncherIcons/frslatingtool.png",
+        "variants": {
+            "pro_mode": {
+                "command": "slating_tool --pro-mode",
+                "description": "Allow skipping of validations",
+                "filters": [["access_level", ">=", "${access.TECHNICAL}"]]
+            }
+        }
+    },
+    "slate_uploader": {
+        "title": "SLATE Upload",
+        "category": "Production",
+        "command": "slate_uploader",
+        "description": "SURV Slating uploader",
+        "icon": "X:/Pipeline/Prism2/LauncherIcons/frslatingtool_uploader.png"
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "packages": [
+        "python-3.10.3"
+    ],
+    "variables": {
+        "SOME_VAR": {
+            "value": "1",
+            "cascade": "replace"
+        },
+        "PATH": {
+            "value": "/path/to/something",
+            "cascade": "append"
+        },
+        "OTHER_VAR": {
+            "value": "1",
+            "cascade": "replace"
+        }
+    },
+    "$parent": "${FR_PROJECTS_DIR}/FR_ENV",
+    "__info__": {
+        "source": "H:/pipeline/work/fr_env_resolver/tests/resources/configs/Projects/FR_ENV/03_Production/Shots/SEQ_001/0020/.fr_config/env_context/default/v1.fr_config",
+        "version": 2,
+        "name": "env_context",
+        "variant": "default",
+        "schema": "c:/users/alex.telford/rez_pkgs_dev/fr_env_resolver/0.1.5.5/schema/env_context.fr_schema",
+        "author": "alex.telford",
+        "created": "16/09/2025, 15:16:43",
+        "commit_message": "Update test"
+    }
+}

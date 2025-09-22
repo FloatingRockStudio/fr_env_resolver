@@ -1,0 +1,28 @@
+Third-Party License Information
+=====================================
+
+This project uses the following third-party libraries:
+
+fr_config
+------
+Copyright (c) 2025 Floating Rock Studio
+License: MIT License
+Repository: https://github.com/floating-rock/fr_config
+
+dacite
+------
+Copyright (c) 2018 Konrad Hałas
+License: MIT License
+Repository: https://github.com/konradhalas/dacite
+
+rez
+---
+Copyright 2013-2025 Allan Johns and contributors
+License: Apache License 2.0
+Repository: https://github.com/AcademySoftwareFoundation/rez
+
+pyjson5
+-------
+Copyright (c) 2020-2023 René Kijewski
+License: MIT License / Apache License 2.0 (dual-licensed)
+Repository: https://github.com/Kijewski/pyjson5

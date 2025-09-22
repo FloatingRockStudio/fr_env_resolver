@@ -1,0 +1,18 @@
+{
+    packages: ["custom_package-0.0.1+"],
+    manifest: "VP20",
+
+    workflows: {
+        maya: {
+            packages: [
+                "another_package-0.0.2+",
+            ],
+        },
+        houdini: {
+            manifest: "VP22",
+            packages: [
+                "another_package-0.0.2+",
+            ],
+        }
+    }
+}

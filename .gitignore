@@ -1,0 +1,13 @@
+*.pyc
+.*.swp
+*~
+.idea
+.idea/
+.directory
+build/
+__pycache__/
+.vscode/
+.env/
+.coverage
+htmlcov/
+*.egg-info/

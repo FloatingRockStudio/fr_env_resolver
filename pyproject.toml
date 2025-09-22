@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fr_env_resolver"
+version = "0.2.0"
+authors = [
+    {name = "alex.telford", email = "alex.telford@floating-rock.com"},
+]
+description = "Resolves an environment based on the specified context"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.7,<4"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "fr_config>=0.2.0,<1",
+    "rez>=3,<4",
+    "dacite>=1.8,<2",
+    "pyjson5>=1.6,<2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+]
+
+[project.scripts]
+fr_env_resolver = "fr_env_resolver.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Floating-Rock-Studio/fr_env_resolver"
+Repository = "https://github.com/Floating-Rock-Studio/fr_env_resolver.git"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.fr_schema", "*.json"]

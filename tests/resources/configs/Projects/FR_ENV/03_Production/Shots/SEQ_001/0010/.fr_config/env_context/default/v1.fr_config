@@ -1,0 +1,35 @@
+{
+    variables: {
+        ENABLE_LEGACY_RENDER: "1",
+        PATH: {
+            "cascade": "append",
+            "value": "/path/to/shot/specific/thing"
+        },
+        PREPATH: {
+            "cascade": "prepend",
+            "value": "/path/to/shot/other/thing"
+        }
+    },
+    packages: ["python-3.10.2", "custom_package.0.0.1+"],
+
+    workflows: {
+        maya: {
+            packages: [
+                "maya-2023.4",
+                "another_package.0.0.2+",
+            ],
+            variables: {
+                MAYA_RENDER_SETUP_INCLUDE_ALL_LIGHTS: "1",
+                MAYA_SCRIPT_PATH: {
+                    value: "/path/to/shot/mel/scripts",
+                    cascade: "append"
+                }
+            }
+        },
+        rv: {
+            variables: {
+                SOME_RV_FLAG: "0"
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "tools": {
+        "maya": {
+            "environ": {
+                "packages": {
+                    "cascade": "append",
+                    "value": ["extra_package"]
+                }
+            }
+        },
+        "slating_tool": {
+            "filters": [["user.groups", "contains", "developer"]],
+            "variants": {
+                "pro_mode": {
+                    "environ": {
+                        "packages": ["custom_pro_package-0.0.1"]
+                    }
+                }
+            }
+        },
+    }
+}
