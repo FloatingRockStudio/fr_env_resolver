@@ -5,6 +5,7 @@
 .idea/
 .directory
 build/
+dist/
 __pycache__/
 .vscode/
 .env/

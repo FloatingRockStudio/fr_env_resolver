@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fr_env_resolver"
-version = "0.2.0"
+version = "0.2.1"
 authors = [
     {name = "alex.telford", email = "alex.telford@floating-rock.com"},
 ]
@@ -41,8 +41,8 @@ dev = [
 fr_env_resolver = "fr_env_resolver.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/Floating-Rock-Studio/fr_env_resolver"
-Repository = "https://github.com/Floating-Rock-Studio/fr_env_resolver.git"
+Homepage = "https://github.com/FloatingRockStudio/fr_env_resolver"
+Repository = "https://github.com/FloatingRockStudio/fr_env_resolver.git"
 
 [tool.setuptools.packages.find]
 where = ["src"]

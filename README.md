@@ -24,13 +24,13 @@ rez-pip install .
 To install directly from this Git repository:
 
 ```bash
-pip install git+https://github.com/Floating-Rock-Studio/fr_env_resolver.git
+pip install git+https://github.com/FloatingRockStudio/fr_env_resolver.git
 ```
 
 or with rez:
 
 ```bash
-rez-pip install git+https://github.com/Floating-Rock-Studio/fr_env_resolver.git
+rez-pip install git+https://github.com/FloatingRockStudio/fr_env_resolver.git
 ```
 
 ## What it does
