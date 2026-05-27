@@ -83,10 +83,14 @@ def execute(args: Args, execution_context: ExecutionContext) -> None:
         print(f"  dev: {args.dev}")
         print(f"  staging: {args.staging}")
 
+    resolve_time = args.time
+    if resolve_time and resolve_time.isdigit():
+        resolve_time = int(resolve_time)
+
     resolved_context = ResolvedContext(
         package_requests=packages,
         package_paths=package_paths,
-        timestamp=args.time,
+        timestamp=resolve_time,
         verbosity=1 if args.verbose else 0,
     )
 
