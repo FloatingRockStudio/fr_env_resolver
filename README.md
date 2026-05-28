@@ -17,8 +17,11 @@ or with rez:
 
 ```bash
 cd /path/to/fr_env_resolver
-rez-pip install .
+rez-env python-3.9.7 -- python -m pip wheel --no-deps --no-build-isolation --wheel-dir dist .
+rez-env rez_pip -- rez-pip2 --python-version 3.9 "fr_env_resolver @ file:///<absolute-repo-path>/dist/fr_env_resolver-<version>-py3-none-any.whl"
 ```
+
+> On Windows, installing directly from `.` with `rez-pip2` can fail in metadata parsing. Building a wheel first and installing from a PEP 508 direct reference is more reliable.
 
 #### Remote Installation
 To install directly from this Git repository:
@@ -30,7 +33,7 @@ pip install git+https://github.com/FloatingRockStudio/fr_env_resolver.git
 or with rez:
 
 ```bash
-rez-pip install git+https://github.com/FloatingRockStudio/fr_env_resolver.git
+rez-env rez_pip -- rez-pip2 "fr_env_resolver @ git+https://github.com/FloatingRockStudio/fr_env_resolver.git"
 ```
 
 ## What it does
@@ -192,3 +195,27 @@ updater.commit("Added tool")
 - **Variant**: Alternative configuration (dev, staging, etc)
 - **Variable** An environment string variable
 - **Override** An optional environment parameter used to indicate that the tool, manifest or workflow should not load any prior environments from parents or cascades. For example; photoshop is not a part of the pipeline, so we only want the photoshop package and no additional components.
+
+## GitHub Actions
+
+This repository uses three workflows under `.github/workflows/`:
+
+- **CI** (`ci.yml`)
+  - Runs tests with `pytest` on Windows and Linux for Python 3.9, 3.10, and 3.11
+  - Builds `sdist` and wheel artifacts with `python -m build`
+  - Validates package metadata with `twine check`
+
+- **Docs** (`docs.yml`)
+  - Builds API docs with `pdoc` from `src/fr_env_resolver`
+  - Publishes to GitHub Pages
+
+- **Publish** (`publish.yml`)
+  - Triggers on `v*` tags
+  - Builds and validates distributions
+  - Publishes to PyPI using trusted publishing (`pypa/gh-action-pypi-publish`)
+
+### Release flow
+
+1. Bump version in `pyproject.toml`
+2. Push/tag release as `vX.Y.Z`
+3. `publish.yml` builds and publishes package artifacts to PyPI

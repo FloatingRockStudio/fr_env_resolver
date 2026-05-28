@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fr_env_resolver"
-version = "0.2.2"
+version = "0.2.3"
 authors = [
     {name = "alex.telford", email = "alex.telford@floating-rock.com"},
 ]
